@@ -1,0 +1,569 @@
+/* ======================== */
+/*        Sidebar           */
+/* ======================== */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 12px;
+    gap: 20px;
+    width: 150px;
+    height: calc(100vh - 40px);
+    background: linear-gradient(180deg, #F1F2F6 0%, #D8D9DE 100%);
+    border: 2px solid #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(233, 233, 233, 0.25);
+    border-radius: 20px;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 100;
+    overflow: visible;
+    transition: width 0.3s ease, border-radius 0.3s ease, padding 0.3s ease;
+}
+
+/* Top Section */
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    padding-left: 8px;
+    transition: width 0.3s ease, align-items 0.3s ease;
+}
+
+/* Logo */
+.sidebar-logo {
+    width: 100px;
+    height: auto;
+    transition: width 0.3s ease;
+}
+
+.sidebar-logo img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    transition: width 0.3s ease;
+}
+
+/* Collapsed logo text */
+.sidebar-logo-collapsed {
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    color: #151515;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar-logo-collapsed .logo-u {
+    color: #930051;
+}
+
+.sidebar-logo-collapsed .logo-a {
+    color: #000000;
+}
+
+
+/* Divider */
+.sidebar-divider {
+    width: 100%;
+    height: 1px;
+    background: #BCBCC0;
+    transition: width 0.3s ease;
+}
+
+/* Nav Items */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    transition: align-items 0.3s ease;
+}
+
+.sidebar-nav-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    color: #4A4A4A;
+    width: 100%;
+}
+
+.sidebar-nav-item:hover {
+    color: #930051;
+}
+
+.sidebar-nav-item:hover span {
+    color: #930051;
+}
+
+.sidebar-nav-item.active {
+    color: #930051;
+}
+
+.sidebar-nav-item.active span {
+    color: #930051;
+}
+
+.sidebar-nav-item span {
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #4A4A4A;
+    white-space: nowrap;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.sidebar-nav-item svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/* Bottom Section */
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    padding-left: 8px;
+    transition: align-items 0.3s ease;
+}
+
+.sidebar-bottom-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.sidebar-bottom-item span {
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #4A4A4A;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+}
+
+.sidebar-bottom-item svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.sidebar-bottom-item {
+    color: #4A4A4A;
+    transition: color 0.2s ease;
+}
+
+.sidebar-bottom-item:hover {
+    color: #930051;
+}
+
+.sidebar-bottom-item:hover span {
+    color: #930051;
+}
+
+/* User Avatar */
+.sidebar-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    background: #E6E6E6;
+    border-radius: 40px;
+    flex-shrink: 0;
+}
+
+.sidebar-avatar span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 16px;
+    color: #4A4A4A;
+}
+
+/* ======================== */
+/*      Toggle Button       */
+/* ======================== */
+
+.sidebar-toggle {
+    position: absolute;
+    top: 60px;
+    right: -14px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #26303F;
+    border: 2px solid #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 110;
+    padding: 0;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* ======================== */
+/*    Collapsed Sidebar     */
+/* ======================== */
+
+.sidebar.collapsed {
+    width: 56px;
+    border-radius: 80px;
+    padding: 32px 8px 24px;
+    gap: 32px;
+    align-items: center;
+}
+
+.sidebar.collapsed .sidebar-top {
+    align-items: center;
+    width: 40px;
+    gap: 28px;
+    padding: 0;
+}
+
+.sidebar.collapsed .sidebar-logo {
+    width: 28px;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar.collapsed .sidebar-divider {
+    width: 40px;
+}
+
+.sidebar.collapsed .sidebar-nav {
+    align-items: center;
+    gap: 24px;
+}
+
+.sidebar.collapsed .sidebar-nav-item {
+    justify-content: center;
+    gap: 0;
+}
+
+.sidebar.collapsed .sidebar-nav-item span {
+    display: none;
+}
+
+.sidebar.collapsed .sidebar-dropdown {
+    display: none;
+}
+
+.sidebar.collapsed .sidebar-bottom {
+    align-items: center;
+    gap: 16px;
+    padding: 0;
+}
+
+.sidebar.collapsed .sidebar-bottom-item {
+    justify-content: center;
+    gap: 0;
+}
+
+.sidebar.collapsed .sidebar-bottom-item span {
+    display: none;
+}
+
+.sidebar.collapsed .sidebar-avatar span {
+    display: flex;
+}
+
+/* ======================== */
+/*    Dashboard Layout      */
+/* ======================== */
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.dashboard-content {
+    margin-left: 190px;
+    padding: 40px;
+    flex: 1;
+    transition: margin-left 0.3s ease;
+}
+
+.dashboard-content.sidebar-collapsed {
+    margin-left: 96px;
+}
+
+/* ======================== */
+/*    Large Desktop ≥1440   */
+/* ======================== */
+
+@media (min-width: 1440px) {
+    .sidebar {
+        padding: 24px 16px;
+        gap: 32px;
+        width: 165px;
+        height: calc(100vh - 40px);
+    }
+
+    .sidebar-top {
+        gap: 32px;
+        width: 100%;
+    }
+
+    .sidebar-logo,
+    .sidebar-logo img,
+    .sidebar-divider {
+        width: 110px;
+    }
+
+    .sidebar-nav {
+        gap: 24px;
+    }
+
+    .sidebar-nav-item span,
+    .sidebar-bottom-item span {
+        font-size: 14px;
+    }
+
+    .sidebar-bottom {
+        gap: 16px;
+    }
+
+    .dashboard-content {
+        margin-left: 205px;
+    }
+
+    .dashboard-content.sidebar-collapsed {
+        margin-left: 96px;
+    }
+}
+
+/* ======================== */
+/*  Normal Desktop 1024-1439*/
+/* ======================== */
+
+@media (max-width: 1439px) and (min-width: 1024px) {
+    .sidebar {
+        padding: 20px 12px;
+        gap: 20px;
+        width: 150px;
+        height: calc(100vh - 30px);
+        left: 15px;
+        top: 15px;
+    }
+
+    .sidebar-top {
+        gap: 20px;
+    }
+
+    .sidebar-nav {
+        gap: 16px;
+    }
+
+    .sidebar-nav-item span,
+    .sidebar-bottom-item span {
+        font-size: 13px;
+    }
+
+    .sidebar-bottom {
+        gap: 12px;
+    }
+
+    .dashboard-content {
+        margin-left: 180px;
+        padding: 30px;
+    }
+
+    .dashboard-content.sidebar-collapsed {
+        margin-left: 96px;
+    }
+}
+
+/* ======================== */
+/*    Tablet 768-1023       */
+/* ======================== */
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .sidebar {
+        padding: 20px 10px;
+        gap: 20px;
+        width: 60px;
+        height: calc(100vh - 20px);
+        left: 10px;
+        top: 10px;
+        align-items: center;
+    }
+
+    .sidebar-top {
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .sidebar-logo {
+        width: 40px;
+    }
+
+    .sidebar-logo img {
+        width: 40px;
+    }
+
+    .sidebar-divider {
+        width: 40px;
+    }
+
+    .sidebar-nav {
+        align-items: center;
+        gap: 18px;
+    }
+
+    .sidebar-nav-item {
+        justify-content: center;
+        gap: 0;
+    }
+
+    .sidebar-nav-item span {
+        display: none;
+    }
+
+    .sidebar-bottom {
+        align-items: center;
+        gap: 14px;
+        padding: 0;
+    }
+
+    .sidebar-bottom-item {
+        justify-content: center;
+        gap: 0;
+    }
+
+    .sidebar-bottom-item span {
+        display: none;
+    }
+
+    .sidebar-avatar span {
+        font-size: 9px;
+    }
+
+    .dashboard-content {
+        margin-left: 80px;
+        padding: 20px;
+    }
+}
+
+/* ======================== */
+/*     Mobile < 768         */
+/* ======================== */
+
+@media (max-width: 767px) {
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: auto;
+        transform: none;
+        width: 100%;
+        height: 60px;
+        min-height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 16px 16px 0 0;
+        padding: 8px 16px;
+        gap: 0;
+        z-index: 100;
+    }
+
+    .sidebar-top {
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+        width: auto;
+        padding: 0;
+    }
+
+    .sidebar-logo,
+    .sidebar-divider {
+        display: none;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .sidebar-nav-item {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .sidebar-nav-item span {
+        font-size: 10px;
+    }
+
+    .sidebar-nav-item svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .sidebar-bottom {
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        padding: 0;
+    }
+
+    .sidebar-bottom-item {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .sidebar-bottom-item span {
+        font-size: 10px;
+    }
+
+    .sidebar-bottom-item svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .sidebar-avatar {
+        width: 20px;
+        height: 20px;
+    }
+
+    .sidebar-avatar span {
+        font-size: 8px;
+    }
+
+    .dashboard-layout {
+        flex-direction: column;
+    }
+
+    .dashboard-content {
+        margin-left: 0;
+        padding: 20px;
+        padding-bottom: 80px;
+    }
+}

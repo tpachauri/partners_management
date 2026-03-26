@@ -1,0 +1,88 @@
+/* ======================== */
+/*   PP Neue Montreal Font  */
+/* ======================== */
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PP NEU Montreal/ppneuemontreal-thin.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PP NEU Montreal/ppneuemontreal-book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PP NEU Montreal/ppneuemontreal-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PP NEU Montreal/ppneuemontreal-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PP NEU Montreal/ppneuemontreal-italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* ======================== */
+/*      Manrope Font        */
+/* ======================== */
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope/manrope-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope/manrope-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope/manrope-semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope/manrope-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ======================== */
+/*       Global Reset       */
+/* ======================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PP Neue Montreal', 'Inter', sans-serif;
+  background: linear-gradient(180deg, #E3E5EA 0%, #C4C6CC 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #333;
+}

@@ -1,0 +1,187 @@
+/* Container */
+.uni-action-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 24px;
+    /* Slightly reduced vertical gap */
+    width: 232px;
+    /* Reduced from 250px */
+    height: 176px;
+    /* Slightly reduced height */
+    background: linear-gradient(180deg, #F1F2F6 0%, #D8D9DE 100%);
+    border: 2px solid #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(233, 233, 233, 0.25);
+    border-radius: 12px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.uni-action-card:hover {
+    box-shadow: 0px 8px 16px rgba(147, 0, 81, 0.15);
+}
+
+/* Header Frame */
+.uni-card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 100%;
+    height: 36px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+/* Icon Box */
+.uni-card-icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background: #F8FAFC;
+    border-radius: 10px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.uni-card-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #930051;
+}
+
+/* Status Badge */
+.uni-card-status {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px;
+    width: 70px;
+    height: 22px;
+    background: #43484E;
+    border-radius: 200px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.uni-card-status-text {
+    height: 14px;
+    font-family: 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+/* Body Frame */
+.uni-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+    width: 100%;
+    min-height: 40px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.uni-card-title {
+    min-height: 19px;
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #0A0A0A;
+}
+
+.uni-card-subtitle {
+    height: 16px;
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #66758A;
+}
+
+/* Footer / Progress Frame */
+.uni-card-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+    width: 100%;
+    height: 16px;
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+/* Progress Bar Container */
+.uni-card-progress-track {
+    /* width: 100%; Remove fixed width */
+    height: 12px;
+    background: #F1F5F9;
+    border-radius: 80px;
+    flex: 1;
+    /* Allow to fill remaining space */
+    position: relative;
+    overflow: hidden;
+}
+
+.uni-card-progress-fill {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #930051;
+    border-radius: 80px;
+}
+
+.uni-card-progress-text {
+    width: auto;
+    /* Allow auto width */
+    min-width: 27px;
+    height: 16px;
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #66758A;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    white-space: nowrap;
+    /* Prevent wrap */
+}

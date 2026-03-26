@@ -1,0 +1,657 @@
+/* ======================== */
+/*     Dashboard Content    */
+/* ======================== */
+
+.dashboard-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 20px;
+    flex: 1;
+    overflow-x: hidden;
+}
+
+/* ======================== */
+/*     Dashboard Header     */
+/* ======================== */
+
+.dashboard-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.dashboard-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dashboard-subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #4A4A4A;
+}
+
+.dashboard-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+    color: #000000;
+}
+
+/* ======================== */
+/*       Stats Cards        */
+/* ======================== */
+
+.stats-row {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.stats-card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 14px 20px;
+    gap: 6px;
+    min-width: 100px;
+    height: 80px;
+    background: linear-gradient(180deg, #F1F2F6 0%, #D8D9DE 100%);
+    border-bottom: 1px solid #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(233, 233, 233, 0.25);
+    border-radius: 12px;
+}
+
+.stats-card-label {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #4A4A4A;
+    white-space: nowrap;
+}
+
+.stats-card-value {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: #000000;
+}
+
+/* ======================== */
+/*     Queue Container      */
+/* ======================== */
+
+.queue-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    flex: 1;
+    background: linear-gradient(180deg, #F1F2F6 0%, #D8D9DE 100%);
+    border: 1px solid #E9E9E9;
+    box-shadow: 0px 4px 12px rgba(233, 233, 233, 0.25);
+    border-radius: 16px;
+}
+
+/* ======================== */
+/*     Queue Header         */
+/* ======================== */
+
+.queue-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.queue-title-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.queue-icon {
+    color: #930051;
+}
+
+.queue-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: #000000;
+}
+
+.queue-header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.add-university-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    height: 40px;
+    background: #930051;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.add-university-btn:hover {
+    background: #7a0043;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 10px;
+    width: 400px;
+    max-width: 100%;
+    height: 40px;
+    background: #FBFBFB;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #000000;
+    width: 100%;
+}
+
+.search-input::placeholder {
+    color: #66758A;
+}
+
+/* ======================== */
+/*       Table Styles       */
+/* ======================== */
+
+.table-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-header {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px 10px 12px;
+    gap: 0;
+    width: 100%;
+    min-height: 40px;
+    background: #CBD5E1;
+    border-bottom: 1px solid #CBD5E1;
+}
+
+.table-header .table-col {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #4A5666;
+}
+
+.table-row {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px 8px 12px;
+    gap: 0;
+    width: 100%;
+    min-height: 48px;
+    border-bottom: 1px solid #CBD5E1;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.table-row:hover {
+    background-color: #F9FAFB;
+}
+
+.table-row:hover .uni-name {
+    color: #930051;
+}
+
+.row-light {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.row-white {
+    background: #FFFFFF;
+}
+
+/* Column widths — percentage based for fluid scaling */
+.col-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1 1 28%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.col-id {
+    flex: 0 0 12%;
+    min-width: 0;
+}
+
+.col-location {
+    flex: 0 0 18%;
+    min-width: 0;
+}
+
+.col-status {
+    flex: 0 0 14%;
+    min-width: 0;
+}
+
+.col-progress {
+    flex: 0 0 22%;
+    min-width: 0;
+}
+
+/* University avatar */
+.uni-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #E6E6E6;
+    flex-shrink: 0;
+}
+
+.uni-avatar span {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    color: #4A4A4A;
+}
+
+.uni-name {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 19px;
+    color: #000000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.uni-id {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    color: #66758A;
+}
+
+.uni-location {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    color: #66758A;
+}
+
+/* ======================== */
+/*      Status Badge        */
+/* ======================== */
+
+.status-badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 10px;
+    height: 28px;
+    border-radius: 20px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* ======================== */
+/*      Progress Bar        */
+/* ======================== */
+
+.progress-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.progress-track {
+    position: relative;
+    flex: 1;
+    min-width: 60px;
+    height: 12px;
+    background: #F1F5F9;
+    border-radius: 80px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 12px;
+    background: #930051;
+    border-radius: 80px;
+}
+
+.progress-text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #66758A;
+    flex-shrink: 0;
+}
+
+/* ======================== */
+/*       Pagination         */
+/* ======================== */
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 12px;
+}
+
+.pagination-info {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #4A5666;
+    white-space: nowrap;
+}
+
+.pagination-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.pagination-arrow:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.pagination-pages {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.pagination-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+    color: #4A5666;
+    cursor: pointer;
+    border-radius: 80px;
+    padding: 0;
+}
+
+.pagination-page.active {
+    background: #930051;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.pagination-page.dots {
+    cursor: default;
+    color: #26303F;
+}
+
+/* ======================== */
+/*   Large Desktop ≥1440    */
+/* ======================== */
+
+@media (min-width: 1440px) {
+    .dashboard-main {
+        padding: 24px 36px;
+        gap: 24px;
+    }
+
+    .stats-card {
+        padding: 16px 28px;
+        height: 92px;
+    }
+
+    .stats-card-label {
+        font-size: 14px;
+    }
+
+    .stats-card-value {
+        font-size: 24px;
+    }
+
+    .stats-row {
+        gap: 20px;
+    }
+
+    .uni-name,
+    .uni-id,
+    .uni-location {
+        font-size: 14px;
+    }
+
+    .status-badge {
+        padding: 8px 16px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .search-bar {
+        width: 480px;
+        height: 44px;
+        padding: 12px 20px;
+    }
+
+    .search-input {
+        font-size: 16px;
+    }
+}
+
+/* ======================== */
+/*    Responsive: ≤1200     */
+/* ======================== */
+
+@media (max-width: 1200px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ======================== */
+/*    Responsive: ≤1023     */
+/* ======================== */
+
+@media (max-width: 1023px) {
+    .dashboard-main {
+        padding: 16px 16px;
+    }
+
+    .col-id,
+    .col-location {
+        display: none;
+    }
+
+    .col-name {
+        flex: 1 1 40%;
+    }
+
+    .col-status {
+        flex: 0 0 20%;
+    }
+
+    .col-progress {
+        flex: 0 0 30%;
+    }
+
+    .queue-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+}
+
+/* ======================== */
+/*    Responsive: ≤767      */
+/* ======================== */
+
+@media (max-width: 767px) {
+    .dashboard-main {
+        padding: 12px 12px;
+        padding-bottom: 80px;
+    }
+
+    .stats-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .stats-card {
+        padding: 10px 14px;
+        height: auto;
+        min-width: 0;
+    }
+
+    .stats-card-label {
+        font-size: 10px;
+    }
+
+    .stats-card-value {
+        font-size: 18px;
+    }
+
+    .table-header,
+    .table-row {
+        padding: 8px 10px;
+    }
+
+    .col-status {
+        flex: 0 0 25%;
+    }
+
+    .col-progress {
+        display: none;
+    }
+
+    .pagination {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .pagination-info {
+        font-size: 11px;
+    }
+
+    .dashboard-title {
+        font-size: 20px;
+    }
+
+    .dashboard-subtitle {
+        font-size: 13px;
+    }
+}

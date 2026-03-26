@@ -1,0 +1,238 @@
+/* Frame 118 Container */
+.identity-details-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    /* User CSS had 20px 36px, but container padding is handled by parent usually. We might apply it if needed. */
+    gap: 24px;
+    width: 100%;
+    max-width: 858px;
+    height: auto;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    z-index: 1;
+}
+
+/* ================================= */
+/* Breadcrumb */
+/* ================================= */
+.identity-breadcrumb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    /* Slightly increased gap for visual spacing */
+    width: auto;
+    /* Flexible */
+    height: 27px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    cursor: pointer;
+}
+
+.breadcrumb-root {
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: #66758A;
+}
+
+.breadcrumb-separator {
+    width: 24px;
+    height: 24px;
+    color: #66758A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.breadcrumb-current {
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: #000000;
+}
+
+/* ================================= */
+/* Main Card Container */
+/* ================================= */
+.identity-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Align content? User CSS says flex-end? probably for the button? The content inside seems width fill. */
+    padding: 24px;
+    gap: 28px;
+    width: 100%;
+    /* max-width: 786px; Based on design, but allow flex */
+    background: linear-gradient(180deg, #F1F2F6 0%, #D8D9DE 100%);
+    border: 2px solid #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(233, 233, 233, 0.25);
+    border-radius: 12px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.identity-card-header-text {
+    width: 100%;
+    height: 27px;
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: #000000;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.identity-card-divider {
+    width: 100%;
+    height: 0px;
+    border: 1px solid #CCCDD2;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+/* Content Area inside Card */
+.identity-card-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    flex: none;
+    order: 2;
+    align-self: stretch;
+}
+
+/* Footer Section inside Card (or outside? User image shows Save Changes inside the grey box at bottom right) */
+.identity-card-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    /* Pushes content to right */
+    gap: 32px;
+    /* Space between Back to Tables and Save */
+    width: 100%;
+    padding-top: 10px;
+    flex: none;
+    order: 3;
+}
+
+.btn-back-tables {
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #4A5565;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-save-changes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 28px;
+    gap: 10px;
+    background: #930051;
+    border: 1px solid #930051;
+    color: #FFFFFF;
+    /* Text color was white in user desc */
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    cursor: pointer;
+    /* Determine shape? Component 3 says nothing specific on radius? Component 3 usually rectangular or slight radius. */
+    /* Assuming standard btn radius possibly 0 or small? User didn't specify radius for Component 3, but "button" usually has some. */
+    /* Looking at image... rectangle. maybe small radius? Defaults usually 4px. */
+}
+
+/* ================================= */
+/* Bottom Progress Bar */
+/* ================================= */
+.identity-bottom-progress {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+    width: 100%;
+    height: 16px;
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.identity-progress-track {
+    width: 100%;
+    height: 12px;
+    background: #F1F5F9;
+    border-radius: 80px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.identity-progress-fill {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #930051;
+    border-radius: 80px;
+}
+
+.identity-progress-text {
+    width: auto;
+    height: 16px;
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #66758A;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .identity-card-footer {
+        flex-direction: column-reverse;
+        gap: 16px;
+        align-items: stretch;
+    }
+
+    .btn-save-changes {
+        width: 100%;
+    }
+}

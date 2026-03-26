@@ -1,0 +1,385 @@
+/* University Details Layout */
+.university-details-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0 !important;
+}
+
+/* Secondary Sidebar Wrapper */
+.secondary-sidebar-wrapper {
+    width: max-content;
+    height: 100%;
+    background: transparent;
+    flex-shrink: 0;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+}
+
+/* Responsive Wrapper for Mobile */
+@media (max-width: 767px) {
+    .university-details-container {
+        flex-direction: column;
+    }
+
+    .secondary-sidebar-wrapper {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #E6E6E6;
+    }
+}
+
+/* Main Content Area next to secondary sidebar */
+.details-content-area {
+    flex-grow: 1;
+    height: 100%;
+    overflow-y: auto;
+    background: transparent;
+    /* Changed to transparent to show global body gradient */
+    padding: 32px;
+    /* Increased padding */
+}
+
+.details-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #66758A;
+    text-align: center;
+    gap: 16px;
+}
+
+.details-placeholder h2 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #151515;
+}
+
+.details-placeholder p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    color: #66758A;
+}
+
+/* Cards Grid Layout */
+.uni-cards-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 28px;
+    /* Increased gap */
+    align-items: flex-start;
+    padding-top: 10px;
+}
+
+/* Page Header Style */
+.details-page-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+    height: 27px;
+    margin-bottom: 24px;
+
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: #930051;
+}
+
+.details-page-header svg {
+    color: #930051;
+    width: 24px;
+    height: 24px;
+}
+
+/* Fields Grid Layout */
+.fields-grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .fields-grid-2-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Academics Empty State */
+.academics-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px;
+    text-align: center;
+    gap: 16px;
+}
+
+.academics-empty-state .academics-empty-icon {
+    margin-bottom: 8px;
+}
+
+.academics-empty-state h3 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+}
+
+.academics-empty-state p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    color: #66758A;
+    max-width: 400px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Program Name Badge */
+.program-name-badge {
+    margin-left: 8px;
+    padding: 2px 10px;
+    background: rgba(147, 0, 81, 0.1);
+    border-radius: 12px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #930051;
+}
+
+/* Same for all programs checkbox */
+.same-for-all-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: rgba(147, 0, 81, 0.04);
+    border: 1px solid rgba(147, 0, 81, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.same-for-all-checkbox:hover {
+    background: rgba(147, 0, 81, 0.08);
+    border-color: rgba(147, 0, 81, 0.25);
+}
+
+.same-for-all-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #930051;
+    cursor: pointer;
+}
+
+.same-for-all-checkbox span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #334155;
+}
+
+/* Action Buttons in tables */
+.action-btn {
+    padding: 5px 14px;
+    border: 1px solid #930051;
+    border-radius: 6px;
+    background: transparent;
+    color: #930051;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.action-btn:hover {
+    background: #930051;
+    color: #fff;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-container {
+    background: #fff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.modal-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #151515;
+    margin: 0;
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #66758A;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    color: #930051;
+}
+
+.modal-body {
+    padding: 24px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* ── Master Table Overrides ── */
+.master-table .table-header,
+.master-table .table-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+}
+
+.master-table .table-row {
+    min-height: 48px;
+}
+
+.master-table .table-col {
+    padding: 10px 12px;
+    box-sizing: border-box;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #333;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.master-table .table-header .table-col {
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #4A5666;
+    white-space: nowrap;
+}
+
+.master-table .table-row .uni-name {
+    display: inline;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.master-table .table-row .action-col {
+    display: flex;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+/* Toast animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Live Data button (filled purple) */
+.action-btn.live-data-btn {
+    background: #930051;
+    color: #fff;
+    border-color: #930051;
+}
+
+.action-btn.live-data-btn:hover {
+    background: #7a0043;
+}
+
+/* LSQ status badges */
+.lsq-status-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.lsq-status-pending {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
+.lsq-status-success {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+.lsq-status-failed {
+    background: #FEE2E2;
+    color: #991B1B;
+}
+
+.lsq-status-partial {
+    background: #FFEDD5;
+    color: #9A3412;
+}
+
+.lsq-status-stale {
+    background: #FEF3C7;
+    color: #B45309;
+}

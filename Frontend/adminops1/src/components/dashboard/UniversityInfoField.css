@@ -1,0 +1,181 @@
+.uni-info-field-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    /* Gap between header/input/source */
+    width: 100%;
+    /* Will fit into grid column */
+    min-width: 0;
+    /* Prevent flex blowouts */
+}
+
+/* Header: Label + Use Source */
+.uni-field-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    width: 100%;
+    min-height: 22px;
+}
+
+.uni-field-header-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.uni-field-label {
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #4A4A4A;
+}
+
+.uni-field-use-source {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.uni-field-use-source span {
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #930051;
+}
+
+.uni-field-use-source svg {
+    /* Style the icon if needed, color is usually currentColor or explicit */
+    color: #930051;
+}
+
+/* Input Field */
+.uni-field-input-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 12px;
+    width: 100%;
+    height: 36px;
+    background: #FBFBFB;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.uni-field-input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #333;
+    /* Text color */
+}
+
+.uni-field-input::placeholder {
+    color: #66758A;
+}
+
+.uni-field-input:focus {
+    outline: none;
+}
+
+/* Source Box */
+.uni-field-source-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2px 6px;
+    gap: 6px;
+    /* Reduced gap to fit "SOURCE:" and text */
+    width: fit-content;
+    /* Only take necessary width or max 100% */
+    max-width: 100%;
+    height: auto;
+    min-height: 20px;
+    background: #F1F5F9;
+    border-radius: 4px;
+}
+
+.source-label {
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #66758A;
+    white-space: nowrap;
+}
+
+.source-text {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #45556C;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Use Live Source Button */
+.uni-field-use-live-source {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.uni-field-use-live-source span {
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #930051;
+}
+
+.uni-field-use-live-source svg {
+    color: #930051;
+}
+
+/* Live Source Box */
+.uni-field-live-source-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2px 6px;
+    gap: 6px;
+    width: fit-content;
+    max-width: 100%;
+    height: auto;
+    min-height: 20px;
+    background: #F1F5F9;
+    border-radius: 4px;
+}

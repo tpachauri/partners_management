@@ -1,0 +1,210 @@
+.live-source-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+}
+
+.live-source-modal-container {
+    background: #fff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.live-source-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.live-source-modal-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #151515;
+}
+
+.live-source-modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #66758A;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.live-source-modal-close-btn:hover {
+    color: #930051;
+}
+
+.live-source-modal-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.live-source-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.live-source-field-label {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #4A4A4A;
+}
+
+.live-source-field-input {
+    padding: 10px 12px;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background: #FBFBFB;
+    transition: border-color 0.2s ease;
+}
+
+.live-source-field-input::placeholder {
+    color: #66758A;
+}
+
+.live-source-field-input:focus {
+    outline: none;
+    border-color: #930051;
+}
+
+.live-source-field-input.input-error {
+    border-color: #D32F2F;
+}
+
+.live-source-error-text {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    color: #D32F2F;
+}
+
+.live-source-modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid #E6E6E6;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.live-source-cancel-btn {
+    padding: 10px 20px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    background: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #4A5565;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.live-source-cancel-btn:hover {
+    background: #F1F2F6;
+}
+
+.live-source-save-btn {
+    padding: 10px 20px;
+    border: 1px solid #930051;
+    border-radius: 8px;
+    background: #930051;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.live-source-save-btn:hover {
+    background: #7a0043;
+}
+
+.live-source-optional-tag {
+    font-weight: 400;
+    font-size: 12px;
+    color: #66758A;
+}
+
+.live-source-file-dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    border: 2px dashed #CBD5E1;
+    border-radius: 8px;
+    background: #FBFBFB;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.live-source-file-dropzone:hover {
+    border-color: #930051;
+    background: #FDF2F8;
+}
+
+.live-source-dropzone-text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #66758A;
+}
+
+.live-source-file-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: #F1F5F9;
+    border-radius: 6px;
+    border: 1px solid #CBD5E1;
+}
+
+.live-source-file-name {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #333;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.live-source-file-remove {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #66758A;
+    cursor: pointer;
+    padding: 0 2px;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.live-source-file-remove:hover {
+    color: #D32F2F;
+}
