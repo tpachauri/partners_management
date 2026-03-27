@@ -158,6 +158,8 @@ router.put('/:id/approve', async (req, res) => {
                 pan_completed: true,
                 entity_completed: true,
                 bank_completed: true,
+                gst_verified: true,
+                udyam_verified: true,
             })
             .eq('id', id)
             .select()
