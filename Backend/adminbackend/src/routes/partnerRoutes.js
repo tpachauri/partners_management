@@ -298,6 +298,36 @@ router.patch('/:id/verify-udyam', async (req, res) => {
 });
 
 /**
+ * PATCH /api/partners/:id/verify-aadhar
+ * Admin approves (verified) or rejects (blocked) Aadhaar for a partner.
+ * Body: { value: boolean } — true = verified, false = blocked
+ */
+router.patch('/:id/verify-aadhar', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const value = req.body?.value ?? true;
+        const aadhar_status = value ? 'verified' : 'blocked';
+
+        const { data, error } = await supabaseAdmin
+            .from('onboarding_data')
+            .update({ aadhar_status })
+            .eq('id', id)
+            .select('id, aadhar_status')
+            .single();
+
+        if (error) {
+            console.error('Error updating aadhar_status:', error.message);
+            return res.status(400).json({ success: false, message: error.message });
+        }
+
+        return res.json({ success: true, data });
+    } catch (err) {
+        console.error('Error in PATCH /api/partners/:id/verify-aadhar:', err);
+        return res.status(500).json({ success: false, message: 'Internal server error.' });
+    }
+});
+
+/**
  * PUT /api/partners/:id/unblock
  * Manually unblock a partner by updating their aadhar_status or bank_verify_status.
  */

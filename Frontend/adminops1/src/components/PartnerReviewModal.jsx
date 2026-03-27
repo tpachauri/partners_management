@@ -7,8 +7,8 @@ const STEP_COLORS = ['#3B82F6', '#8B5CF6', '#059669', '#F59E0B'];
 const STEP_BG    = ['#EFF6FF', '#F5F3FF', '#ECFDF5', '#FFFBEB'];
 
 function VerifiedDot({ verified }) {
-    if (!verified) return null;
-    return <span className="prv-verified-dot" title="System Verified" />;
+    if (verified) return <span className="prv-verified-dot" title="Verified" />;
+    return <span className="prv-pending-label">Pending</span>;
 }
 
 // ── helpers ──────────────────────────────────────────────────────────────
@@ -45,7 +45,7 @@ function buildSteps(d) {
     ef.push({
         key: 's2_gst_sel', label: 'GSTIN (Selected)',
         value: d.selected_gst,
-        verified: !!d.selected_gst,
+        verified: d.gst_verified === true,
         optional: true,
     });
     const allGsts = fmtArr(d.gst_numbers);
@@ -62,7 +62,7 @@ function buildSteps(d) {
     ef.push({
         key: 's2_msme_sel', label: 'Udyam URN (Selected)',
         value: d.selected_msme,
-        verified: !!d.selected_msme,
+        verified: d.udyam_verified === true,
         optional: true,
     });
     const allMsme = fmtArr(d.msme_numbers);
@@ -257,10 +257,10 @@ export default function PartnerReviewModal({ partner, onClose, onActionComplete 
 
     const setAction = (key, field, val) => {
         setActions(prev => ({ ...prev, [key]: { ...prev[key], [field]: val } }));
-        // Wire GST / Udyam rows to the verify API
         if (field === 'act') {
-            if (key === 's2_gst_sel')  handleVerify('gst',   val === 'approve');
-            if (key === 's2_msme_sel') handleVerify('udyam', val === 'approve');
+            if (key === 's2_gst_sel')       handleVerify('gst',    val === 'approve');
+            if (key === 's2_msme_sel')      handleVerify('udyam',  val === 'approve');
+            if (key === 's2_aadhar_status') handleVerify('aadhar', val === 'approve');
         }
     };
     const getAction = (key, field) => actions[key]?.[field] ?? '';
@@ -296,15 +296,13 @@ export default function PartnerReviewModal({ partner, onClose, onActionComplete 
     };
 
     /**
-     * Toggle gst_available or udyam_verified for this partner.
-     * type: 'gst' | 'udyam'
+     * Update gst_verified / udyam_verified / aadhar_status for this partner.
+     * type: 'gst' | 'udyam' | 'aadhar'
      */
     const handleVerify = async (type, newVal) => {
-        if (newVal === undefined) {
-            const currentVal = type === 'gst' ? gstVerified : udyamVerified;
-            newVal = !currentVal;
-        }
-        const endpoint = type === 'gst' ? 'verify-gst' : 'verify-udyam';
+        const endpointMap = { gst: 'verify-gst', udyam: 'verify-udyam', aadhar: 'verify-aadhar' };
+        const endpoint = endpointMap[type];
+        if (!endpoint) return;
 
         setVerifying(p => ({ ...p, [type]: true }));
         setVerifyError('');
@@ -316,8 +314,10 @@ export default function PartnerReviewModal({ partner, onClose, onActionComplete 
             });
             const json = await res.json();
             if (!res.ok || !json.success) throw new Error(json.message || 'Verification update failed.');
-            if (type === 'gst')   setGstVerified(newVal);
-            else                  setUdyamVerified(newVal);
+            // Update local state so UI reflects the change immediately
+            if (type === 'gst')   { setGstVerified(newVal);   setDetail(p => ({ ...p, gst_verified: newVal })); }
+            if (type === 'udyam') { setUdyamVerified(newVal); setDetail(p => ({ ...p, udyam_verified: newVal })); }
+            if (type === 'aadhar') setDetail(p => ({ ...p, aadhar_status: newVal ? 'verified' : 'blocked' }));
         } catch (err) {
             setVerifyError(err.message);
         } finally {
@@ -363,8 +363,7 @@ export default function PartnerReviewModal({ partner, onClose, onActionComplete 
                         )}
                         <button className="prv-hdr-btn prv-hdr-reject"  onClick={() => setConfirmAction('reject')}>✕ Reject</button>
                         <div className="prv-legend">
-                            <span className="prv-legend-dot" />
-                            Means Verified
+                            <span className="prv-legend-dot" /> Verified &nbsp;·&nbsp; <span className="prv-pending-label">Pending</span> Not Verified
                         </div>
                     </div>
                 </div>

@@ -431,6 +431,16 @@
     box-shadow: 0 0 0 2.5px rgba(34, 197, 94, 0.22);
 }
 
+/* Not-verified pending label */
+.prv-pending-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #F59E0B;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+}
+
 /* Value cell */
 .prv-cell-value {
     background: #FFF5F8;
